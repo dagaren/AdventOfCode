@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Utils.fs" />
+    <Compile Include="AoC1.fs" />
+    <Compile Include="AoC2.fs" />
+    <Compile Include="AoC3.fs" />
+    <Compile Include="AoC4.fs" />
+    <Compile Include="AoC5.fs" />
+    <Compile Include="AoC6.fs" />
+    <Compile Include="Aoc7.fs" />
+    <Compile Include="AoC8.fs" />
+    <Compile Include="AoC9.fs" />
+    <Compile Include="AoC10.fs" />
+    <Compile Include="AoC11.fs" />
+    <Compile Include="AoC12.fs" />
+    <Compile Include="AoC13.fs" />
+    <Compile Include="AoC14.fs" />
+    <Compile Include="AoC15.fs" />
+    <Compile Include="AoC16.fs" />
+    <Compile Include="AoC17.fs" />
+    <Compile Include="AoC18.fs" />
+    <Compile Include="AoC19.fs" />
+    <Compile Include="AoC20.fs" />
+    <Compile Include="AoC21.fs" />
+    <Compile Include="AoC22.fs" />
+    <Compile Include="AoC23.fs" />
+    <Compile Include="AoC24.fs" />
+    <Compile Include="AoC25.fs" />
+    <Compile Include="Commands.fs" />
+    <Compile Include="Parsing.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FParsec" Version="1.1.1" />
+    <PackageReference Include="FSharpx.Collections" Version="3.0.1" />
+  </ItemGroup>
+
+</Project>
