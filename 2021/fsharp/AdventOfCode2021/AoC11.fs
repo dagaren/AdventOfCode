@@ -12,18 +12,7 @@ type octopusmap = {
 let aoc11 () =
     printBanner 11
 
-    let input = [|
-        "4341347643";
-        "5477728451";
-        "2322733878";
-        "5453762556";
-        "2718123421";
-        "4237886115";
-        "5631617114";
-        "2217667227";
-        "4236581255";
-        "4482627641"
-    |]
+    let input = readInputFile "AoC11.txt"
 
     let tInput = input
                   |> Array.map (fun x -> Seq.toList x) 

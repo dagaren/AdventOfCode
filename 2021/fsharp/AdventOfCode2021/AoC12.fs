@@ -5,30 +5,7 @@ open Utils
 let aoc12 () =
     printBanner 12
 
-    let input = [
-                    "um-end";
-                    "pk-um";
-                    "FE-il";
-                    "ay-FE";
-                    "pk-start";
-                    "end-jt";
-                    "um-FE";
-                    "RO-il";
-                    "xc-ay";
-                    "il-end";
-                    "start-EZ";
-                    "pk-FE";
-                    "xc-start";
-                    "jt-FE";
-                    "EZ-um";
-                    "pk-xc";
-                    "xc-EZ";
-                    "pk-ay";
-                    "il-ay";
-                    "jt-EZ";
-                    "jt-om";
-                    "pk-EZ";
-                ]
+    let input = readInputFile "AoC12.txt" |> Array.toList
 
     let updateKey newVal oldVal = 
         match oldVal with
