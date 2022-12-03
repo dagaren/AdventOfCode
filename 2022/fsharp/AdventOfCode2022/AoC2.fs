@@ -31,6 +31,13 @@ let aoc2 () =
         | "Z" -> Scissors
         | _ -> failwith "Invalid input for own turn"
 
+    let mapExpectedResult x = 
+        match x with
+        | "X" -> Loss
+        | "Y" -> Draw
+        | "Z" -> Win
+        | _ -> failwith "Invalid input for expected result"
+
     let shapeScore x =
         match x with
         | Rock -> 1
@@ -61,6 +68,24 @@ let aoc2 () =
             | Paper -> Win
             | Scissors -> Draw
 
+    let turnForResult opponent expectedResult = 
+        match opponent with
+        | Rock ->
+            match expectedResult with
+            | Win -> Paper
+            | Draw -> Rock
+            | Loss -> Scissors
+        | Paper ->
+            match expectedResult with
+            | Win -> Scissors
+            | Draw -> Paper
+            | Loss -> Rock
+        | Scissors ->
+            match expectedResult with
+            | Win -> Rock
+            | Draw -> Scissors
+            | Loss -> Paper
+
     let result1 =
         inputLines
         |> List.map (split ' ')
@@ -71,4 +96,13 @@ let aoc2 () =
 
     printFirstStarResult result1
 
-    
+    let result2 =
+        inputLines
+        |> List.map (split ' ')
+        |> List.map (fun [| x; y |] -> (x |> mapOpponentTurn, y |> mapExpectedResult))
+        |> List.map (fun (opponent, expectedResult) -> (opponent, (turnForResult opponent expectedResult), expectedResult))
+        |> List.map (fun (opponent, mine, expectedResult) -> (shapeScore mine) + (resultScore expectedResult))
+        |> List.sum
+        |> string
+
+    printSecondStarResult result2
