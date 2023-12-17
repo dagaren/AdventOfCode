@@ -17,7 +17,11 @@ let printSecondStarResult result =
 
 let readFileLines (filePath:string) = File.ReadAllLines(filePath)
 
+let readFile (filePath:string) = File.ReadAllText(path = filePath)
+
 let readInputFile name = readFileLines <| sprintf "./Inputs/%s" name
+
+let readInputFileText name = readFile <| sprintf "./Inputs/%s" name
 
 let split char (str:string) = str.Split [| char |]
 
